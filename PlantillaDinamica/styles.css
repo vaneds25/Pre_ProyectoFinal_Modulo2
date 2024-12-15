@@ -1,0 +1,108 @@
+/* Estilo básico para el layout Flexbox */
+.flex-layout {
+    /* Activa Flexbox en el contenedor principal */
+    display: flex;
+    
+    /* Dirección de los elementos dentro del contenedor: columna en pantallas pequeñas */
+    flex-direction: column;
+  
+    /* Asegura que el contenedor ocupe al menos el 100% de la altura de la ventana */
+    min-height: 100vh;
+  }
+  
+  /* Estilos para el header y el footer */
+  .header, .footer {
+    /* Fondo rosado para header y footer */
+    background-color: #ffcccb;
+    
+    /* Espaciado interno */
+    padding: 20px;
+    
+    /* Alineación del texto al centro */
+    text-align: center;
+  }
+  
+  /* Estilo para la barra de navegación */
+  .navbar {
+    /* Fondo azul claro para la barra de navegación */
+    background-color: #add8e6;
+    
+    /* Espaciado interno */
+    padding: 15px;
+    
+    /* Alineación del texto al centro */
+    text-align: center;
+  }
+  
+  /* Estilo para el contenido principal */
+  .main-content {
+    /* Fondo verde claro para el contenido principal */
+    background-color: #90ee90;
+  
+    /* Permite que el contenido principal ocupe el espacio disponible (flexible) */
+    flex: 1;
+  
+    /* Espaciado interno */
+    padding: 20px;
+    
+    /* Alineación del texto al centro */
+    text-align: center;
+  }
+  
+  /* Estilo para la barra lateral */
+  .sidebar {
+    /* Fondo amarillo claro para la barra lateral */
+    background-color: #f0e68c;
+    
+    /* Espaciado interno */
+    padding: 20px;
+    
+    /* Alineación del texto al centro */
+    text-align: center;
+  }
+  
+  /* Media query para pantallas más grandes (mayores de 768px) */
+  @media (min-width: 768px) {
+    .flex-layout {
+      /* Cambia la dirección a fila (horizontal) para pantallas más grandes */
+      flex-direction: row;
+  
+      /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+      flex-wrap: wrap;
+    }
+  
+    /* Hace que el header ocupe todo el ancho */
+    .header {
+      flex-basis: 100%;
+    }
+  
+    /* Hace que la barra de navegación ocupe todo el ancho */
+    .navbar {
+      flex-basis: 100%;
+    }
+  
+    /* El contenido principal ocupa más espacio (2 veces el de la barra lateral) */
+    .main-content {
+      flex: 2;
+      
+      /* Controla el orden de los elementos, asegurando que el contenido principal esté después de la barra de navegación */
+      order: 2;
+    }
+  
+    /* La barra lateral ocupa menos espacio (1 vez el de la principal) */
+    .sidebar {
+      flex: 1;
+      
+      /* Controla el orden de los elementos, asegurando que la barra lateral esté antes del contenido principal */
+      order: 1;
+    }
+  
+    /* El pie de página ocupa todo el ancho */
+    .footer {
+      flex-basis: 100%;
+      
+      /* Controla el orden de los elementos, asegurando que el pie de página esté al final */
+      order: 3;
+    }
+  }
+  

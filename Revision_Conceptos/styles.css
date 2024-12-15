@@ -1,0 +1,61 @@
+/* Establecer el diseño con Grid */
+.portfolio-container {
+    display: grid; /* Activar el sistema Grid */
+    
+    /* Definir áreas específicas dentro de la cuadrícula */
+    grid-template-areas:
+      "header header"          /* Header ocupa dos columnas */
+      "main-content sidebar"   /* Main content ocupa dos áreas */
+      "footer footer";         /* Footer ocupa toda la fila */
+    
+    /* Definir la cantidad de columnas y su tamaño */
+    grid-template-columns: 2fr 1fr; /* Dos columnas, la primera dos veces más grande que la segunda */
+    
+    gap: 20px; /* Espacio entre las áreas */
+  }
+  
+  /* Estilos para el header */
+  .header {
+    grid-area: header; /* Asignar el área 'header' */
+    background-color: #ffcccb; /* Color rosado */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenido principal */
+  .main-content {
+    grid-area: main-content; /* Asignar el área 'main-content' */
+    background-color: #add8e6; /* Color azul claro */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para la barra lateral */
+  .sidebar {
+    grid-area: sidebar; /* Asignar el área 'sidebar' */
+    background-color: #90ee90; /* Color verde claro */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el footer */
+  .footer {
+    grid-area: footer; /* Asignar el área 'footer' */
+    background-color: #f0e68c; /* Color amarillo claro */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Media Query para dispositivos pequeños */
+  @media (max-width: 768px) {
+    .portfolio-container {
+      grid-template-areas:
+        "header"           /* Header en la primera fila */
+        "main-content"     /* Contenido principal en la segunda fila */
+        "sidebar"          /* Sidebar en la tercera fila */
+        "footer";          /* Footer en la última fila */
+      
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+  }
+  
